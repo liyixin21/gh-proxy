@@ -1,0 +1,14 @@
+node_modules/
+.DS_Store
+*.log
+.env
+.env.*
+
+# 各平台构建产物
+cloudflare/dist/
+esa/dist/
+edgeone/dist/
+edgeone/dist-upload.zip
+
+# Cloudflare
+.wrangler/

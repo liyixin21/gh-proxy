@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="description" content="GitHub 文件加速：加速下载 release 附件、源码包与 raw 单文件。">
+    <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,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">
+    <title>GitHub 文件加速</title>
+    <script>
+        (function () {
+            function apply(theme) {
+                document.documentElement.setAttribute('data-theme', theme);
+                var icon = document.getElementById('theme-icon');
+                if (icon) {
+                    var moon = icon.querySelector('.icon-moon');
+                    var sun = icon.querySelector('.icon-sun');
+                    if (moon) moon.style.display = theme === 'dark' ? 'none' : '';
+                    if (sun) sun.style.display = theme === 'dark' ? '' : 'none';
+                }
+            }
+            window.detectColorScheme = function () {
+                var saved = null;
+                try { saved = localStorage.getItem('theme'); } catch (e) {}
+                var dark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                apply(saved === 'dark' || (!saved && dark) ? 'dark' : 'light');
+            };
+            window.toggleTheme = function () {
+                var next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+                apply(next);
+                try { localStorage.setItem('theme', next); } catch (e) {}
+            };
+            document.addEventListener('DOMContentLoaded', window.detectColorScheme);
+        })();
+    </script>
+    <style>
+        :root {
+            --bg: #ffffff; --bg-soft: #fafafa; --fg: #27272a; --fg-mute: #71717a;
+            --accent: #00bfb3; --accent-hover: #00a89c; --card: #ffffff;
+            --line: #e4e4e7; --code-bg: #f4f4f5; --danger: #e5484d; --ok: #30a46c;
+            --shadow: 0 1px 2px rgba(0,0,0,.04), 0 8px 24px -8px rgba(0,0,0,.08);
+        }
+        [data-theme="dark"] {
+            --bg: #18181b; --bg-soft: #1f1f23; --fg: #f4f4f5; --fg-mute: #a1a1aa;
+            --accent: #00d9cc; --accent-hover: #22e6da; --card: #27272a;
+            --line: #3f3f46; --code-bg: #3f3f46; --danger: #ff6369; --ok: #3dd68c;
+            --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px -8px rgba(0,0,0,.5);
+        }
+        * { box-sizing: border-box; }
+        html, body { margin: 0; padding: 0; min-height: 100%; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                         "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: var(--bg); color: var(--fg); line-height: 1.6;
+            display: flex; flex-direction: column; align-items: center;
+            padding: clamp(1rem, 4vw, 3rem) 1rem;
+            transition: background-color .25s ease, color .25s ease;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container { width: 100%; max-width: 720px; }
+        header { position: relative; text-align: center; margin-bottom: clamp(1.5rem, 5vw, 2.5rem); }
+        .logo {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 52px; height: 52px; border-radius: 14px;
+            background: #181717;
+            margin-bottom: 1rem;
+            box-shadow: 0 6px 18px -8px rgba(0, 0, 0, .35);
+        }
+        .logo svg { width: 28px; height: 28px; fill: #fff; }
+        h1 { font-size: clamp(1.4rem, 5vw, 1.9rem); font-weight: 650; letter-spacing: -.02em; margin: 0 0 .4rem; }
+        .subtitle { margin: 0; color: var(--fg-mute); font-size: clamp(.88rem, 3.4vw, .98rem); }
+        .theme-toggle {
+            position: absolute; top: 0; right: 0; width: 38px; height: 38px;
+            display: grid; place-items: center;
+            background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+            color: var(--fg-mute); cursor: pointer;
+            transition: border-color .15s, color .15s, transform .15s;
+        }
+        .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+        .theme-toggle:active { transform: scale(.94); }
+        .card {
+            background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+            padding: clamp(1.1rem, 4vw, 1.6rem); box-shadow: var(--shadow); margin-bottom: 1rem;
+        }
+        .field-label { display: block; font-size: .82rem; font-weight: 600; color: var(--fg-mute); margin-bottom: .55rem; }
+        .input-row { display: flex; gap: .6rem; }
+        @media (max-width: 560px) { .input-row { flex-direction: column; } }
+        .url-input {
+            flex: 1; min-width: 0; padding: .85rem 1rem; font-size: .95rem;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+            color: var(--fg); background: var(--bg-soft);
+            border: 1.5px solid var(--line); border-radius: 10px;
+            transition: border-color .15s, box-shadow .15s;
+        }
+        .url-input::placeholder { color: var(--fg-mute); opacity: .7; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+        .url-input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(0,191,179,.18); }
+        .url-input.is-invalid { border-color: var(--danger); box-shadow: 0 0 0 3px rgba(229,72,77,.15); }
+        .submit-btn {
+            padding: .85rem 1.5rem; font-size: .95rem; font-weight: 600; color: #fff;
+            background: var(--accent); border: none; border-radius: 10px;
+            cursor: pointer; white-space: nowrap;
+            transition: background-color .15s, transform .1s;
+        }
+        .submit-btn:hover { background: var(--accent-hover); }
+        .submit-btn:active { transform: scale(.98); }
+        .feedback { display: none; align-items: flex-start; gap: .5rem; margin-top: .7rem; font-size: .84rem; line-height: 1.5; }
+        .feedback.show { display: flex; }
+        .feedback .icon { flex: 0 0 auto; }
+        .feedback.error { color: var(--danger); }
+        .feedback.ok { color: var(--ok); }
+        .presets { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: .9rem; }
+        .preset {
+            font-size: .78rem; padding: .32rem .7rem; color: var(--fg-mute);
+            background: var(--bg-soft); border: 1px solid var(--line); border-radius: 999px;
+            cursor: pointer; font-family: inherit;
+            transition: color .15s, border-color .15s, background-color .15s;
+        }
+        .preset:hover { color: var(--accent); border-color: var(--accent); background: rgba(0,191,179,.08); }
+        .info-grid { display: grid; gap: 1rem; margin-top: 1.6rem; }
+        @media (min-width: 640px) { .info-grid { grid-template-columns: 1fr 1fr; } }
+        .info-box { background: var(--bg-soft); border: 1px solid var(--line); border-radius: 12px; padding: 1rem 1.1rem; }
+        .info-box h3 { margin: 0 0 .6rem; font-size: .9rem; font-weight: 650; display: flex; align-items: center; gap: .4rem; }
+        .info-box h3::before { content: ''; width: 3px; height: 14px; background: var(--accent); border-radius: 2px; }
+        .info-box ul { margin: 0; padding: 0; list-style: none; }
+        .info-box li { font-size: .82rem; color: var(--fg-mute); padding: .28rem 0; display: flex; gap: .5rem; align-items: baseline; }
+        .info-box li::before { content: '·'; color: var(--accent); font-weight: 700; }
+        code {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+            font-size: .92em; padding: .1rem .35rem; background: var(--code-bg);
+            border-radius: 4px; color: var(--fg); word-break: break-all;
+        }
+        footer { margin-top: auto; padding-top: 2.5rem; text-align: center; font-size: .78rem; color: var(--fg-mute); }
+        footer a { color: var(--fg-mute); text-decoration: none; }
+        footer a:hover { color: var(--accent); }
+        @media (prefers-reduced-motion: no-preference) {
+            .container > * { animation: rise .5s cubic-bezier(.16,1,.3,1) backwards; }
+            .container > :nth-child(2) { animation-delay: .06s; }
+            .container > :nth-child(3) { animation-delay: .12s; }
+            @keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <button class="theme-toggle" onclick="toggleTheme()" aria-label="切换深色 / 浅色主题">
+                <svg id="theme-icon" width="17" height="17" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path class="icon-moon" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                    <g class="icon-sun" style="display:none">
+                        <circle cx="12" cy="12" r="4"/>
+                        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+                    </g>
+                </svg>
+            </button>
+            <div class="logo" aria-hidden="true">
+                <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                </svg>
+            </div>
+            <h1>GitHub 文件加速</h1>
+            <p class="subtitle">粘贴链接，秒开下载 · release / 源码包 / 单文件</p>
+        </header>
+
+        <main>
+            <section class="card">
+                <label class="field-label" for="dl-input">GitHub 文件地址</label>
+                <form onsubmit="return submitDownload(event)">
+                    <div class="input-row">
+                        <input id="dl-input" class="url-input" type="text"
+                               placeholder="https://github.com/owner/repo/releases/download/v1.0/file.zip"
+                               autocomplete="off" spellcheck="false" autocapitalize="off">
+                        <button type="submit" class="submit-btn">加速下载</button>
+                    </div>
+                    <div id="feedback" class="feedback"></div>
+                </form>
+                <div class="presets">
+                    <button type="button" class="preset" data-url="https://github.com/cli/cli/releases/download/v2.40.0/gh_2.40.0_linux_amd64.tar.gz">release 示例</button>
+                    <button type="button" class="preset" data-url="https://github.com/octocat/Hello-World/archive/refs/heads/master.zip">源码包示例</button>
+                    <button type="button" class="preset" data-url="https://github.com/octocat/Hello-World/blob/master/README">单文件示例</button>
+                    <button type="button" class="preset" data-url="https://raw.githubusercontent.com/octocat/Hello-World/master/README">raw 示例</button>
+                </div>
+            </section>
+
+            <div class="info-grid">
+                <div class="info-box">
+                    <h3>支持的地址</h3>
+                    <ul>
+                        <li><code>releases/download</code> release 附件</li>
+                        <li><code>archive</code> 源码包（zip / tar.gz）</li>
+                        <li><code>blob</code> / <code>raw</code> 单文件</li>
+                        <li><code>gist</code> 代码片段</li>
+                        <li><code>git clone</code> 加速</li>
+                    </ul>
+                </div>
+                <div class="info-box">
+                    <h3>使用提示</h3>
+                    <ul>
+                        <li>链接带不带 <code>https://</code> 都行</li>
+                        <li>右键「复制链接地址」最准确</li>
+                        <li>不支持整个文件夹，请用 archive</li>
+                        <li>大文件走流式转发，不占内存</li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            基于 Cloudflare / EdgeOne / ESA ·
+            <a href="https://github.com/liyixin21/gh-proxy" rel="noopener noreferrer" target="_blank">liyixin21/gh-proxy</a>
+        </footer>
+    </div>
+
+    <script>
+        var PATTERNS = [
+            { re: /^(?:https?:\/\/)?github\.com\/[^/]+\/[^/]+\/(?:releases|archive)\/.*$/i, label: 'release / 源码包' },
+            { re: /^(?:https?:\/\/)?github\.com\/[^/]+\/[^/]+\/(?:info|git-)/i,             label: 'git 协议' },
+            { re: /^(?:https?:\/\/)?github\.com\/[^/]+\/[^/]+\/tags/i,                      label: 'tags' },
+            { re: /^(?:https?:\/\/)?github\.com\/[^/]+\/[^/]+\/suites\//i,                   label: 'artifacts' },
+            { re: /^(?:https?:\/\/)?github\.com\/[^/]+\/[^/]+\/(?:blob|raw)\//i,             label: '单文件' },
+            { re: /^(?:https?:\/\/)?gist\.(?:githubusercontent|github)\.com\/[^/]+\/[^/]+\//i, label: 'gist' },
+            { re: /^(?:https?:\/\/)?raw\.(?:githubusercontent|github)\.com\/[^/]+\/[^/]+\/[^/]+\//i, label: 'raw 文件' }
+        ];
+
+        var input = document.getElementById('dl-input');
+        var feedback = document.getElementById('feedback');
+
+        function stripScheme(s) {
+            return s.trim().replace(/^https?:\/\//i, '').replace(/^\/+/, '');
+        }
+
+        function validate(value) {
+            var v = value.trim();
+            if (!v) return { ok: false, message: '请输入 GitHub 文件链接' };
+
+            var normalized = stripScheme(v);
+
+            if (!/^(?:github\.com|gist\.(?:githubusercontent|github)\.com|raw\.(?:githubusercontent|github)\.com)\//i.test(normalized)) {
+                return { ok: false, message: '只支持 github.com、raw.githubusercontent.com、gist.githubusercontent.com 的链接' };
+            }
+
+            for (var i = 0; i < PATTERNS.length; i++) {
+                if (PATTERNS[i].re.test(normalized)) {
+                    return { ok: true, message: '已识别为「' + PATTERNS[i].label + '」' };
+                }
+            }
+
+            if (/^github\.com\/[^/]+\/[^/]+\/?$/i.test(normalized)) {
+                return { ok: false, message: '这是仓库首页，不是文件。请打开具体文件，或改用 archive 链接下载整个项目' };
+            }
+            if (/^github\.com\/[^/]+\/?$/i.test(normalized)) {
+                return { ok: false, message: '这是用户主页，请提供具体的文件链接' };
+            }
+            if (/\/tree\//i.test(normalized)) {
+                return { ok: false, message: '不支持文件夹浏览，请用 archive 链接下载整个项目，或点击具体文件' };
+            }
+            if (/(?:issues|pull|discussions)\//i.test(normalized)) {
+                return { ok: false, message: 'issues / PR / discussions 不是文件，无法下载' };
+            }
+
+            return { ok: false, message: '无法识别的 GitHub 链接，需要包含 releases、archive、blob、raw 或 gist' };
+        }
+
+        function renderFeedback(result) {
+            if (!result) {
+                feedback.className = 'feedback';
+                feedback.innerHTML = '';
+                input.classList.remove('is-invalid');
+                return;
+            }
+            feedback.className = 'feedback show ' + (result.ok ? 'ok' : 'error');
+            feedback.innerHTML = '<span class="icon">' + (result.ok ? '✓' : '✕') +
+                                 '</span><span>' + escapeHtml(result.message) + '</span>';
+            input.classList.toggle('is-invalid', !result.ok);
+        }
+
+        function escapeHtml(s) {
+            return String(s).replace(/[&<>"']/g, function (c) {
+                return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+            });
+        }
+
+        var timer = null;
+        input.addEventListener('input', function () {
+            clearTimeout(timer);
+            var v = input.value;
+            timer = setTimeout(function () {
+                if (!v.trim()) { renderFeedback(null); return; }
+                renderFeedback(validate(v));
+            }, 220);
+        });
+
+        Array.prototype.forEach.call(document.querySelectorAll('.preset'), function (btn) {
+            btn.addEventListener('click', function () {
+                input.value = btn.getAttribute('data-url');
+                renderFeedback(validate(input.value));
+                input.focus();
+            });
+        });
+
+        function submitDownload(e) {
+            e.preventDefault();
+            var raw = input.value;
+            var result = validate(raw);
+            if (!result.ok) {
+                renderFeedback(result);
+                input.focus();
+                return false;
+            }
+            renderFeedback(result);
+            window.location.href = location.origin + '/' + stripScheme(raw);
+            return false;
+        }
+
+        window.addEventListener('DOMContentLoaded', function () {
+            if (window.innerWidth > 640) input.focus();
+        });
+    </script>
+</body>
+</html>

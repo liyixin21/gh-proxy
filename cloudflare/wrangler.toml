@@ -1,0 +1,16 @@
+name = "gh-proxy"
+main = "worker.js"
+compatibility_date = "2026-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+# 纯下载模式：只需一条路由
+# 访问形态：https://ghproxy.liyixin.vip/https://github.com/owner/repo/...
+routes = [
+  { pattern = "ghproxy.liyixin.vip/*", zone_name = "liyixin.vip" },
+]
+
+[observability]
+enabled = true
+
+[observability.logs]
+invocation_logs = true
